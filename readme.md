@@ -13,8 +13,13 @@
   $ ./vim.sh
 ```
 
+```
+  # ./direnv.sh
+```
+
 #### Requirements
 
 * git
+* jq
 * vim
 * curl

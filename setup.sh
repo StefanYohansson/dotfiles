@@ -17,11 +17,11 @@ function install_deps {
         return;
     fi
     if [ $1 = "ARCH" ]; then
-        sudo pacman -S git vim curl;
+        sudo pacman -S git vim curl jq;
     fi
 
     if [ $1 = 'DEBIAN' ]; then
-        sudo apt install -y git vim-nox curl;
+        sudo apt install -y git vim-nox curl jq;
     fi
 }
 
