@@ -51,8 +51,8 @@ nmap <leader>nc :NERDTreeClose<cr>
 nmap <F8> :TagbarToggle<CR>
 
 set hidden
-let g:racer_cmd = "/home/snotr/.cargo/bin/racer"
-let $RUST_SRC_PATH="/home/snotr/.rsvm/current/src/rustc-source/src"
+let g:racer_cmd = "~/.cargo/bin/racer"
+let $RUST_SRC_PATH="~/.rsvm/current/src/rustc-source/src"
 let g:racer_experimental_completer = 1
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -144,7 +144,7 @@ let g:vdebug_options= {
 			\	"continuous_mode": 1,
 			\	"debug_window_level": 2,
 			\	"debug_file_level": 2,
-			\	"debug_file":"/home/snotr0/vdebug.log"
+			\	"debug_file":"~/vdebug.log"
 			\}
 
 " AIRLINE 
