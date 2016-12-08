@@ -8,6 +8,7 @@
 
 ```
   $ ./setup.sh
+  $ ./rust.sh
   $ ./vim.sh
 ```
 
