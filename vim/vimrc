@@ -1,0 +1,198 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'powerline/fonts'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'edkolev/promptline.vim'
+Plugin 'phildawes/racer'
+Plugin 'rust-lang/rust.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-bufferline'
+Plugin 'timonv/vim-cargo'
+Plugin 'skwp/vim-easymotion'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-markdown'
+Plugin 'jlfwong/vim-mercenary'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'unterzicht/vim-virtualenv'
+
+call vundle#end()
+filetype plugin indent on
+
+"""
+"""""
+""""""" non plugin things
+"""""
+"""
+
+"set number
+set ruler
+set showcmd
+set autoindent
+set cursorline
+set nocursorcolumn
+set nocursorline
+set laststatus=2
+syntax sync minlines=256
+
+let mapleader = ","
+nmap <leader>ne :NERDTree<cr>
+nmap <leader>nc :NERDTreeClose<cr>
+nmap <F8> :TagbarToggle<CR>
+
+set hidden
+let g:racer_cmd = "/home/snotr/.cargo/bin/racer"
+let $RUST_SRC_PATH="/home/snotr/.rsvm/current/src/rustc-source/src"
+let g:racer_experimental_completer = 1
+
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+set t_Co=16
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+syntax enable
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:airline_theme='bubblegum'
+colorscheme default
+set background=dark
+colors delek
+set autoread
+
+filetype plugin indent on
+autocmd Filetype php setlocal sts=4 sw=4 expandtab
+autocmd Filetype perl setlocal sts=4 sw=4 expandtab
+autocmd Filetype sh setlocal sts=4 sw=4 expandtab
+autocmd Filetype javascript setlocal sts=2 sw=2 expandtab
+autocmd Filetype sql setlocal sts=2 sw=2 expandtab
+autocmd Filetype lua setlocal sts=2 sw=2 expandtab
+autocmd Filetype haskell setlocal sts=2 sw=2 expandtab
+autocmd Filetype scss setlocal sts=2 sw=2 expandtab
+autocmd Filetype html setlocal sts=2 sw=2 expandtab
+autocmd Filetype python setlocal sts=4 sw=4 expandtab
+autocmd Filetype c setlocal sts=4 sw=4 expandtab
+autocmd Filetype ruby setlocal sts=2 sw=2 expandtab
+autocmd Filetype vcl setlocal sts=4 sw=4 expandtab
+autocmd Filetype json setlocal sts=4 sw=4 expandtab
+autocmd Filetype erb setlocal sts=4 sw=4 expandtab
+au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+
+
+" COLORS {
+" syntax highlighting groups
+hi Comment      ctermfg=7
+"	hi Constant     ctermfg=15 
+"	hi Identifier   ctermfg=4
+"	hi Statement    ctermfg=8
+"	hi PreProc      ctermfg=6
+"	hi Type         ctermfg=1
+"	hi Special      ctermfg=3
+"	hi Underlined   ctermfg=7
+"	hi Ignore       ctermfg=9
+"	hi Error        ctermfg=11
+"	hi Todo         ctermfg=1
+"	hi Normal ctermfg=none ctermbg=none
+"	hi NonText ctermfg=0 ctermbg=none
+"	hi Directory	ctermfg=12
+
+hi VertSplit	ctermfg=0 ctermbg=none
+hi StatusLine	ctermfg=0 ctermbg=none
+hi StatusLineNC	ctermfg=0 ctermbg=none
+
+hi Folded ctermbg=0 ctermfg=8
+
+hi Pmenu ctermfg=7 ctermbg=0
+hi PmenuSel ctermfg=0 ctermbg=15
+hi LineNr ctermfg=0 ctermbg=none
+hi CursorLine ctermfg=none ctermbg=none cterm=none
+hi CursorLineNr ctermfg=none ctermbg=0 
+hi CursorColumn ctermfg=none ctermbg=0
+" Syntax checker colors
+highlight SignColumn ctermbg=none
+hi SyntasticErrorSign ctermfg=1 ctermbg=none
+hi SyntasticWarningSign ctermfg=3 ctermbg=none
+hi SyntasticStyleErrorSign ctermfg=1 ctermbg=none
+hi SyntasticStyleWarningSign ctermfg=3 ctermbg=none
+hi SyntasticErrorLine ctermfg=none ctermbg=none
+hi SyntasticWarningLine ctermfg=none ctermbg=none
+hi SyntasticStyleErrorLine ctermfg=none ctermbg=none
+hi SyntasticStyleWarningLine ctermfg=none ctermbg=none
+hi SpellBad ctermfg=0 ctermbg=3
+hi SpellCap ctermfg=0 ctermbg=1
+
+"}
+
+" NERDTREE
+let NERDChristmasTree = 1
+let NERDTreeHighlightCursorline = 1
+
+" VDEBUG
+let g:vdebug_features = {'max_depth':2048}
+let g:vdebug_options= {
+			\	"continuous_mode": 1,
+			\	"debug_window_level": 2,
+			\	"debug_file_level": 2,
+			\	"debug_file":"/home/snotr0/vdebug.log"
+			\}
+
+" AIRLINE 
+let g:airline_symbols = {}
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+" Fancy powerline symbols, needs a patched/edited font
+let g:Powerline_symbols = 'fancy'
+"
+" " Use # to indicate branches
+let g:Powerline_symbols_override = {
+			\ 'BRANCH': [0x2213],
+			\ }
+set formatoptions=1
+set lbr
+set linebreak
+set wrap
+au BufRead,BufNewFile *.todo setfiletype todo
+
+
+cabbr wp call Wp()
+fun! Wp()
+	set formatoptions=1
+	set lbr
+	set linebreak
+	set wrap
+	set nonumber
+	nnoremap j gj
+	nnoremap k gk
+	nnoremap 0 g0
+	nnoremap $ g$
+	set comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-,fb:[+],fb:[x],fb:[-]
+	set comments +=fb:-
+	set spell spelllang=en_us
+
+endfu
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+			\let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+			\gvy/<C-R><C-R>=substitute(
+			\escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+			\gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+			\let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+			\gvy?<C-R><C-R>=substitute(
+			\escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+			\gV:call setreg('"', old_reg, old_regtype)<CR>
+"}
+
+
