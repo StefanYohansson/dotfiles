@@ -9,6 +9,7 @@
 ```
   $ ./setup.sh
   $ ./rust.sh
+  $ ./node.sh
   $ ./vim.sh
 ```
 
