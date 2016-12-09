@@ -1,9 +1,5 @@
-[user]
-  name = StefanYohansson
-  email = sy.fen0@gmail.com
-
-[github]
-  user = StefanYohansson
+[include]
+    path = .userinfo
 
 [alias]
   st = status
