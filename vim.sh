@@ -3,8 +3,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function create_links {
-    ln -s "$DIR/vim/vimrc" ~/.vimrc
-    ln -s "$DIR/vim/bundle" ~/.vim/bundle
+    ln -sfv "$DIR/vim/vimrc" ~/.vimrc
+    ln -sfv "$DIR/vim/bundle" ~/.vim/bundle
 }
 
 function init_submodule {
