@@ -7,7 +7,7 @@
 #### Installation
 
 ```
-  $ ./setup.sh
+  $ ./setup.sh --install-deps
   $ ./rust.sh
   $ ./node.sh
   $ ./git.sh --user StefanYohansson --email sy.fen0@gmail.com --github StefanYohansson
