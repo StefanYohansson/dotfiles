@@ -15,8 +15,14 @@ function install_deps {
     vim +PluginInstall +qall
 }
 
+function copy_fonts {
+    cp -Rf "$DIR/vim/bundle/fonts/*" ~/.fonts
+    fc-cache -fv ~/.fonts
+}
+
 mkdir -p ~/.vim/
 
 create_links
 init_submodule
 install_deps
+copy_fonts
