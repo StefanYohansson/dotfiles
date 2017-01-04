@@ -1,0 +1,31 @@
+MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export EDITOR=vim
+
+export NVM_DIR="$MYDIR/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+[[ -s $MYDIR/.rsvm/rsvm.sh ]] && . $MYDIR/.rsvm/rsvm.sh
+[[ $- = *i* ]] && source $MYDIR/Repos/liquidprompt/liquidprompt
+
+PATH=$PATH:$MYDIR/.cargo/bin
+PATH="$MYDIR/perl5/bin:$MYDIR/.gem/ruby/2.3.0/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$MYDIR/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$MYDIR/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$MYDIR/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$MYDIR/perl5"; export PERL_MM_OPT;
+
+_direnv_hook() {
+  local previous_exit_status=$?;
+  eval "$(direnv export bash)";
+  return $previous_exit_status;
+};
+if ! [[ "$PROMPT_COMMAND" =~ _direnv_hook ]]; then
+  PROMPT_COMMAND="_direnv_hook;$PROMPT_COMMAND";
+fi
+
+[[ -s $MYDIR/Repos/z/z.sh ]] && . $MYDIR/Repos/z/z.sh
+
+alias clips='xclip -se c'
