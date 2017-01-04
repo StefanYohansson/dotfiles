@@ -22,10 +22,12 @@ Plugin 'bling/vim-bufferline'
 Plugin 'timonv/vim-cargo'
 Plugin 'skwp/vim-easymotion'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-markdown'
 Plugin 'jlfwong/vim-mercenary'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'unterzicht/vim-virtualenv'
+Plugin 'jwalton512/vim-blade'
 
 call vundle#end()
 filetype plugin indent on
@@ -47,6 +49,7 @@ set laststatus=2
 syntax sync minlines=256
 
 let mapleader = ","
+nmap <leader>t :tabnew<cr>
 nmap <leader>ne :NERDTree<cr>
 nmap <leader>nc :NERDTreeClose<cr>
 nmap <F8> :TagbarToggle<CR>
@@ -74,6 +77,7 @@ set autoread
 
 filetype plugin indent on
 autocmd Filetype php setlocal sts=4 sw=4 expandtab
+autocmd Filetype blade setlocal sts=2 sw=2 expandtab
 autocmd Filetype perl setlocal sts=4 sw=4 expandtab
 autocmd Filetype sh setlocal sts=4 sw=4 expandtab
 autocmd Filetype javascript setlocal sts=2 sw=2 expandtab
