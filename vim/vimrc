@@ -6,12 +6,13 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'powerline/fonts'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'edkolev/promptline.vim'
 Plugin 'phildawes/racer'
 Plugin 'rust-lang/rust.vim'
@@ -22,12 +23,15 @@ Plugin 'bling/vim-bufferline'
 Plugin 'timonv/vim-cargo'
 Plugin 'skwp/vim-easymotion'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'tpope/vim-markdown'
 Plugin 'jlfwong/vim-mercenary'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'unterzicht/vim-virtualenv'
+Plugin 'noahfrederick/vim-composer'
+Plugin 'noahfrederick/vim-laravel'
 Plugin 'jwalton512/vim-blade'
+Plugin 'stanangeloff/php.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -69,7 +73,7 @@ nmap <C-l> <C-w>l
 syntax enable
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-let g:airline_theme='bubblegum'
+let g:airline_theme='sol'
 colorscheme default
 set background=dark
 colors delek
@@ -81,6 +85,7 @@ autocmd Filetype blade setlocal sts=2 sw=2 expandtab
 autocmd Filetype perl setlocal sts=4 sw=4 expandtab
 autocmd Filetype sh setlocal sts=4 sw=4 expandtab
 autocmd Filetype javascript setlocal sts=2 sw=2 expandtab
+autocmd Filetype css setlocal sts=2 sw=2 expandtab
 autocmd Filetype sql setlocal sts=2 sw=2 expandtab
 autocmd Filetype lua setlocal sts=2 sw=2 expandtab
 autocmd Filetype haskell setlocal sts=2 sw=2 expandtab
@@ -88,6 +93,7 @@ autocmd Filetype scss setlocal sts=2 sw=2 expandtab
 autocmd Filetype html setlocal sts=2 sw=2 expandtab
 autocmd Filetype python setlocal sts=4 sw=4 expandtab
 autocmd Filetype c setlocal sts=4 sw=4 expandtab
+autocmd Filetype cpp setlocal sts=4 sw=4 expandtab
 autocmd Filetype ruby setlocal sts=2 sw=2 expandtab
 autocmd Filetype vcl setlocal sts=4 sw=4 expandtab
 autocmd Filetype json setlocal sts=4 sw=4 expandtab
