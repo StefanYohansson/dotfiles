@@ -21,6 +21,3 @@
 
 [fetch]
   prune = true
-
-[core]
-  askpass = /usr/bin/ssh-askpass
