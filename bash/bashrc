@@ -4,6 +4,7 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export EDITOR=vim
 
+
 export NVM_DIR="$MYDIR/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
@@ -15,6 +16,9 @@ PERL5LIB="$MYDIR/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="$MYDIR/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"$MYDIR/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$MYDIR/perl5"; export PERL_MM_OPT;
+
+NODE_VERSIONS="$NVM_DIR/versions/node"
+NODE_VERSIONS_PREFIX="v"
 
 _direnv_hook() {
   local previous_exit_status=$?;
