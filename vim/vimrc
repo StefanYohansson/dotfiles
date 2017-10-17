@@ -32,6 +32,8 @@ Plugin 'noahfrederick/vim-composer'
 Plugin 'noahfrederick/vim-laravel'
 Plugin 'jwalton512/vim-blade'
 Plugin 'stanangeloff/php.vim'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'junegunn/fzf'
 
 call vundle#end()
 filetype plugin indent on
@@ -65,6 +67,11 @@ colorscheme default
 colors delek
 
 "let values
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 let g:racer_cmd = "~/.cargo/bin/racer"
 let $RUST_SRC_PATH="~/.rsvm/current/src/rustc-source/src"
 let g:racer_experimental_completer = 1
