@@ -41,7 +41,7 @@ filetype plugin indent on
 """"""" non plugin things
 """""
 """
-
+" set values for vim configs
 "set number
 set ruler
 set showcmd
@@ -50,35 +50,44 @@ set cursorline
 set nocursorcolumn
 set nocursorline
 set laststatus=2
-syntax sync minlines=256
+set hidden
+set background=dark
+set autoread
+set t_Co=16
+set formatoptions=1
+set lbr
+set linebreak
+set wrap
 
+syntax sync minlines=256
+syntax enable
+colorscheme default
+colors delek
+
+"let values
+let g:racer_cmd = "~/.cargo/bin/racer"
+let $RUST_SRC_PATH="~/.rsvm/current/src/rustc-source/src"
+let g:racer_experimental_completer = 1
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let mapleader = ","
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:airline_theme='sol'
+
+"general maps
 nmap <leader>t :tabnew<cr>
 nmap <leader>ne :NERDTree<cr>
 nmap <leader>nc :NERDTreeClose<cr>
 nmap <F8> :TagbarToggle<CR>
-
-set hidden
-let g:racer_cmd = "~/.cargo/bin/racer"
-let $RUST_SRC_PATH="~/.rsvm/current/src/rustc-source/src"
-let g:racer_experimental_completer = 1
-
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-set t_Co=16
+nmap <C-]> :NERDTreeToggle<CR>
+nmap <C-e> :vsplit<CR>
+nmap <C-g> :split<CR>
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
-syntax enable
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:airline_theme='sol'
-colorscheme default
-set background=dark
-colors delek
-set autoread
 
+"indentation config based on file type
 filetype plugin indent on
 autocmd Filetype php setlocal sts=4 sw=4 expandtab
 autocmd Filetype blade setlocal sts=2 sw=2 expandtab
@@ -145,6 +154,14 @@ hi SpellCap ctermfg=0 ctermbg=1
 
 "}
 
+"
+""
+"""""
+"""""" PLUGINS CONFIGS
+""""
+""
+"
+
 " NERDTREE
 let NERDChristmasTree = 1
 let NERDTreeHighlightCursorline = 1
@@ -169,10 +186,6 @@ let g:Powerline_symbols = 'fancy'
 let g:Powerline_symbols_override = {
 			\ 'BRANCH': [0x2213],
 			\ }
-set formatoptions=1
-set lbr
-set linebreak
-set wrap
 au BufRead,BufNewFile *.todo setfiletype todo
 
 
