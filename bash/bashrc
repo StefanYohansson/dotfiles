@@ -1,7 +1,5 @@
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
 export EDITOR=vim
 
 
@@ -17,8 +15,8 @@ PERL_LOCAL_LIB_ROOT="$MYDIR/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}
 PERL_MB_OPT="--install_base \"$MYDIR/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$MYDIR/perl5"; export PERL_MM_OPT;
 
-NODE_VERSIONS="$NVM_DIR/versions/node"
-NODE_VERSIONS_PREFIX="v"
+export NODE_VERSIONS="$NVM_DIR/versions/node"
+export NODE_VERSION_PREFIX="v"
 
 _direnv_hook() {
   local previous_exit_status=$?;
