@@ -35,6 +35,10 @@ Plugin 'stanangeloff/php.vim'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'junegunn/fzf'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'davidhalter/jedi'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'lepture/vim-jinja'
 
 call vundle#end()
 filetype plugin indent on
