@@ -23,6 +23,11 @@ function install_deps {
     if [ $1 = 'DEBIAN' ]; then
         sudo apt install -y git vim-nox curl jq;
     fi
+
+    if [ ! -d "~/.fzf" ]; then
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+        ~/.fzf/install
+    fi
 }
 
 # Arch

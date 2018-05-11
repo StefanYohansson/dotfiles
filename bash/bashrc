@@ -54,3 +54,5 @@ _PROMPT() {
 
 PROMPT_COMMAND="_PROMPT;$PROMPT_COMMAND"
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
