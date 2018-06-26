@@ -8,7 +8,7 @@ export NVM_DIR="$MYDIR/.nvm"
 
 [[ -s $MYDIR/.rsvm/rsvm.sh ]] && . $MYDIR/.rsvm/rsvm.sh
 
-PATH=$PATH:$MYDIR/.cargo/bin
+PATH=$PATH:$MYDIR/.cargo/bin:$MYDIR/.local/bin
 PATH="$MYDIR/perl5/bin:$MYDIR/.gem/ruby/2.3.0/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="$MYDIR/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="$MYDIR/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
@@ -56,3 +56,8 @@ PROMPT_COMMAND="_PROMPT;$PROMPT_COMMAND"
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source /home/snotr/.evm/scripts/evm
+source /home/snotr/.kiex/scripts/kiex
+
+source /home/snotr/.private_info

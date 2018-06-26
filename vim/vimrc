@@ -65,6 +65,8 @@ set formatoptions=1
 set lbr
 set linebreak
 set wrap
+set modeline
+set modelines=5
 
 syntax sync minlines=256
 syntax enable
@@ -104,7 +106,7 @@ filetype plugin indent on
 autocmd Filetype php setlocal sts=4 sw=4 expandtab
 autocmd Filetype blade setlocal sts=2 sw=2 expandtab
 autocmd Filetype perl setlocal sts=4 sw=4 expandtab
-autocmd Filetype sh setlocal sts=4 sw=4 expandtab
+autocmd Filetype sh setlocal sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal sts=2 sw=2 expandtab
 autocmd Filetype typescript setlocal sts=2 sw=2 expandtab
 autocmd Filetype css setlocal sts=2 sw=2 expandtab
