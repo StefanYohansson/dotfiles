@@ -24,6 +24,7 @@ Plugin 'timonv/vim-cargo'
 Plugin 'skwp/vim-easymotion'
 Plugin 'pangloss/vim-javascript'
 Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'catppuccin/vim', { 'as': 'catppuccin' }
 Plugin 'tpope/vim-markdown'
 Plugin 'jlfwong/vim-mercenary'
 Plugin 'terryma/vim-multiple-cursors'
@@ -70,8 +71,8 @@ set modelines=5
 
 syntax sync minlines=256
 syntax enable
-colorscheme default
-colors delek
+colorscheme catppuccin_macchiato 
+colors catppuccin_macchiato
 
 "let values
 let g:multi_cursor_use_default_mapping=0
